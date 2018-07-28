@@ -5,6 +5,7 @@
       height: 300px;
       width: 100%;
       border-radius: 5px;
+      margin: 20px 0 20px 0;
     }
     
     mat-card-title {
@@ -12,6 +13,11 @@
       font-weight: bold;
     }
     mat-card-content{
+      width:60%;
+      margin-bottom: 20px;
+      div,p{
+        margin: 20px;
+      }
     }
   
     .cardbody {

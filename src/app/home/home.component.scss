@@ -39,6 +39,12 @@
     float: left;
     margin-right: 10px;
   }
+  a{
+    color: black;
+  }
+  a:hover{
+    color: gray;
+  }
 }
 #morenews{
   margin-top: 20px;
@@ -62,8 +68,8 @@
   top:-3px;
 }
   
-  .col{
-    width: 50%;
+  .col-6{
+    width: 47%;
   }
   #wid-gets{
     display: block;
@@ -75,11 +81,7 @@
        
       }
     }
-    #bmcounts{
-      border: black;
-      border-radius: 2px;
-      display: inline;
-    }
+    
   
   .bookmarked{
     i{

@@ -38,4 +38,11 @@ export class PostsComponent implements OnInit {
         response => this.newsSources = response.json()
       );
   } 
+  signupfrm;
+  process(){
+    
+    console.log(this.signupfrm.value); //get full object
+    console.log(this.signupfrm.value.email); //get only email value
+  }
+
 }

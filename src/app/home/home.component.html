@@ -1,13 +1,14 @@
 <div id="wid-gets">
-    <button type="button" [routerLinkActive]="['view_list']" (click)="toggleActive()"><i class="material-icons">view_list</i></button>
-    <button type="button" [routerLinkActive]="['singleNews']" (click)="toggleActive()"><i class="material-icons">view_module</i></button>
+    <button type="button" (click)="toggleActive()"><i class="material-icons">view_list</i></button>
+    <button type="button" (click)="toggleAction()"><i class="material-icons">view_module</i></button>
     <button type="button"><i class="material-icons">book</i></button>
+    <span style="border: black;">{{counter}}</span>
 </div>
 <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="center">
       <div *ngFor="let post of news.articles let i = index" fxFlex="30%">
-        <mat-card class="singleNews" *ngIf="i<6">
-           <button id="book-mark" (click)="addBookMark" type="button" [ngClass]="{ 'show': addBookMark }"><i class="material-icons">bookmark_border</i></button>
-      <a href="./post"><img mat-card-image src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';">
+        <mat-card  [class.singleNews]="singleNews" [class.listView]="listView" *ngIf="i<6">
+           <button id="book-mark" (click)="addBookMark()" type="button"><i class="material-icons">bookmark_border</i></button>
+      <a href="./posts"><img mat-card-image src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';">
       </a>
         <div class="cardbody">
         <mat-card-title>{{post.title}}</mat-card-title>
@@ -46,7 +47,6 @@
             <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="center">
               <div *ngFor="let post of news.articles let i = index" fxFlex="30%">
                   <mat-card class=singleNews *ngIf="i<6">
-                     <button id="book-mark" (click)="addBookMark" type="button" [ngClass]="{ 'show': addBookMark }"><i class="material-icons">bookmark_border</i></button>
                      <a href="{{post.url}}"><img mat-card-image src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';"></a>
                   </mat-card>
             </div>

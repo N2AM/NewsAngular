@@ -18,20 +18,28 @@ export class HomeComponent implements OnInit {
   			response => this.news = response.json()
     );
   }
-  wasClicked = false;
+  listView = false;
+  singleNews = true;
+
   toggleActive(){
-    this.wasClicked= !this.wasClicked;
+    this.listView= true;
+    this.singleNews=false;
 
   }
-  /*addBookMark(){
-    if (sessionStorage.clickcount==0) {
-      sessionStorage.clickcount = 1;
-       sessionStorage.bookmarknumber =Number(sessionStorage.bookmarknumber)+1;
-  } else if(sessionStorage.clickcount == 1 ) {
-      sessionStorage.clickcount = 0;
-      sessionStorage.bookmarknumber =Number(sessionStorage.bookmarknumber)-1;
-      return sessionStorage.bookmarknumber;
+  toggleAction(){
+    this.singleNews=true;
+    this.listView= false;
+
   }
-    
-   }*/
+ 
+  
+   counter : number = 0;
+   bookmarked=false;
+   addBookMark(){
+     this.counter+=1;
+     this.bookmarked=!this.bookmarked;
+
+   }
+
+
 }
