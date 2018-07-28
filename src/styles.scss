@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './assets/styles/material-theme.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 body{
     margin:0;
 }
+.loader mat-spinner {
+    margin: 10px auto;
+  }

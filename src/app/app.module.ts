@@ -8,22 +8,32 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { NewsService } from './services/news.service';
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PostsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
-
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

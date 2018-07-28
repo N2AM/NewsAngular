@@ -1,3 +1,14 @@
-<p>
-  posts works!
-</p>
+        
+<div class="container">
+        <div *ngFor="let post of news.articles let i = index">
+         <div class="full-post" *ngIf="i<1">
+         <mat-card-title>{{post.title}}</mat-card-title>
+         <div style="display: flex;"><i class="material-icons">account_balance</i>{{post.author}} <i class="material-icons">alarm</i>{{post.publishedAt}}</div>
+         <img mat-card-image id="post-img" src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';">
+         <mat-card-content>
+         <p>{{post.description}}</p>
+         </mat-card-content>
+         </div>
+         </div>
+        </div>
+        <div class="comments">comments</div>

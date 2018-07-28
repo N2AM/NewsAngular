@@ -1,0 +1,30 @@
+#site-name{
+  margin-left: 100px;
+  font-size: 24px;
+  color: white;
+}
+
+.example-link {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .navbar-nav{
+    color: white;
+  }
+  nav{
+   margin-bottom: 40px;
+   border-radius: 2px;
+
+a:hover{
+    color: rgb(226, 202, 202);  
+  }
+  
+}
+#nav-bar{
+  ul{
+    margin-left: 80px;
+  }
+}

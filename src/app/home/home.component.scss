@@ -1,29 +1,88 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;
+.singleNews {
+  margin-bottom: 15px;
+  img {
+    height: 100px;
   }
-  @media only screen and (min-width: 768px) {
-    .container > .mycard {
-      flex-basis: calc(100% / 4);
-    }
-    
-    .mycard {
-      padding: 10px;
-    }
-    .example-header-image {
-      //background-image: url("../../assets/shiba1.jpg");
-      background-size: cover;
-    }
-    
-    @supports (display: grid) {
-      .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+  mat-card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .cardbody {
+    height: 100px;
+    overflow-y: auto;
+    margin: 0 -15px;
+    padding: 10px;
+  }
+}
+.listView {
+  margin-bottom: 15px;
+  img {
+    height: 100px;
+    width:100px;
+    float: left;
+    margin: 0 15px 0 0;
+  }
+  mat-card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .cardbody {
+    height: 100px;
+    overflow-y: auto;
+    margin: 0 -15px;
+    padding: 10px;
+  }
+}
+.teasers{
+  i{
+    display: block;
+    float: left;
+    margin-right: 10px;
+  }
+}
+#morenews{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+#top-images{
+ width: 100%;
+ margin-top: 20px;
+ margin-bottom: 20px;
+ font-size: 24px;
+}
+.teasers{
+  font-size: 10px;
+}
+#book-mark{
+  background: transparent;
+  position: absolute;
+  border: 0;
+  right: -5px;
+  top:-3px;
+}
+  
+  .col{
+    width: 50%;
+  }
+  #wid-gets{
+    display: block;
+    margin-left: 150px;
+    margin-bottom: 25px;
+    button{
+        background: transparent;
+        border-color: transparent;
+       
       }
-    
-      .container > .mycard {
-        flex: 1;
-      }
     }
-    
+    #bmcounts{
+      border: black;
+      border-radius: 2px;
+      display: inline;
+    }
+  
+  .bookmarked{
+    i{
+      color: white;
+    }
   }
