@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "posts",
+    path: "posts/:index",
     component: PostsComponent
   },
  

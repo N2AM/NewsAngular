@@ -4,11 +4,44 @@
     <button type="button"><i class="material-icons">book</i></button>
     <span style="border: black;">{{counter}}</span>
 </div>
+<div class="container" style="margin-bottom: 20px; margin-left: 145px;height: 300px;">
+    <div class="row" style="width:94%;">
+      <div class="col">
+          <ngb-carousel>
+              <ng-template ngbSlide>
+                  <div *ngFor="let post of news.articles let i = index">
+                  <a *ngIf="i==0" href="./posts"><img class = "caro-images" src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';"></a>
+                <div class="carousel-caption">
+                  <h3 *ngIf="i==0">{{post.title}}</h3>
+                </div>
+            </div>
+              </ng-template> 
+              <ng-template ngbSlide>
+                  <div *ngFor="let post of news.articles let i = index">
+                  <a *ngIf="i==1" href="./posts"><img class = "caro-images"src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';"></a>
+                <div class="carousel-caption">
+                  <h3 *ngIf="i==1">{{post.title}}</h3>
+                </div>
+            </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                  <div *ngFor="let post of news.articles let i = index">
+                  <a *ngIf="i==2" href="./posts"><img class = "caro-images" src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';"></a>
+                <div class="carousel-caption">
+                  <h3 *ngIf="i==2">{{post.title}}</h3>
+                </div>
+            </div>
+              </ng-template>
+            </ngb-carousel>          
+      </div>
+    </div>
+  </div>
+  
 <div class="container" fxLayout="wrap row" fxLayout.xs="column" fxLayoutGap="1%" fxLayoutAlign="center">
       <div *ngFor="let post of news.articles let i = index" fxFlex="30%">
         <mat-card  [class.singleNews]="singleNews" [class.listView]="listView" *ngIf="i<6">
            <button id="book-mark" (click)="addBookMark()" type="button"><i class="material-icons">bookmark_border</i></button>
-      <a href="./posts"><img mat-card-image src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';">
+      <a [routerLink]="['/posts/'+i]"><img mat-card-image src="{{post.urlToImage}}" onError="this.src='/assets/blank.png';">
       </a>
         <div class="cardbody">
         <mat-card-title>{{post.title}}</mat-card-title>
@@ -53,5 +86,4 @@
           </div>
       </div>       
   </div>
-
-          
+  

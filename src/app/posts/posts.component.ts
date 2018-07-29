@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NewsService } from '../services/news.service';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-posts",
@@ -12,15 +13,26 @@ export class PostsComponent implements OnInit {
   numberOfArticles= NewsService.length;
   newsSources= {sources:[]};
   filterSource='google-news';
-
-  constructor(private newsService: NewsService){}
+  i:number;
+  post:any;
+  constructor(private newsService: NewsService, private activatedRoute:ActivatedRoute ){
+    this.activatedRoute.params.subscribe(params=>{
+      this.i = parseInt(params.index);
+      
+    });
+    
+  }
 
   ngOnInit() {
     this.newsService.getTopHeadLines()
   		.subscribe(
-  			response => this.news = response.json()
+        response => {
+          this.news = response.json();
+          console.log(this.news.articles);
+          this.post = this.news.articles[this.i];
+        // console.log(response.json().articles);
+      }
     );
-    this.getnewsSources();
   }
 
 
@@ -32,12 +44,6 @@ export class PostsComponent implements OnInit {
     );
   }
 
-  getnewsSources() {
-    this.newsService.getSources()
-      .subscribe(
-        response => this.newsSources = response.json()
-      );
-  } 
   signupfrm;
   process(){
     

@@ -13,6 +13,7 @@ import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NewsService } from './services/news.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
  
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NewsService } from './services/news.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    NgbModule.forRoot()
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
